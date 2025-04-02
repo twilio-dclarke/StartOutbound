@@ -23,9 +23,6 @@ WORKSPACE_SID=WSXXX
 WORKFLOW_SID=WWXXX
 QUEUE_SID=WQXXX
 PROXY_ADDRESS=<TwilioNumber>
-
-Deploy serverless environment
-twilio serverless:deploy
 ```
 
 Deploy serverless environment
