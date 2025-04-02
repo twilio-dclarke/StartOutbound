@@ -1,6 +1,6 @@
-# Your custom Twilio Flex Plugin
+# Start Outbound Conversation
 
-Twilio Flex Plugins allow you to customize the appearance and behavior of [Twilio Flex](https://www.twilio.com/flex). If you want to learn more about the capabilities and how to use the API, check out our [Flex documentation](https://www.twilio.com/docs/flex).
+The Twilio Plugin is intended for use within the Salesforce integration. When an agent attempts to start an outbound engagement with a customer, it prompts them to select the communication channel (Call, SMS, or WhatsApp).
 
 ## Setup
 
@@ -13,19 +13,29 @@ cd
 npm install
 ```
 
-Next, please install the [Twilio CLI](https://www.twilio.com/docs/twilio-cli/quickstart) by running:
+## Serveless
+```
+Rename .env.example to .env and update environment variables 
 
-```bash
-brew tap twilio/brew && brew install twilio
+ACCOUNT_SID=ACXXX
+AUTH_TOKEN=XXXX
+WORKSPACE_SID=WSXXX
+WORKFLOW_SID=WWXXX
+QUEUE_SID=WQXXX
+PROXY_ADDRESS=<TwilioNumber>
+
+Deploy serverless environment
+twilio serverless:deploy
 ```
 
-Finally, install the [Flex Plugin extension](https://github.com/twilio-labs/plugin-flex/tree/v1-beta) for the Twilio CLI:
-
+Deploy serverless environment
 ```bash
-twilio plugins:install @twilio-labs/plugin-flex
+cd serverless/outbound-conversations
+npm install
+twilio serverless:deploy
 ```
 
-## Development
-
-Run `twilio flex:plugins --help` to see all the commands we currently support. For further details on Flex Plugins refer to our documentation on the [Twilio Docs](https://www.twilio.com/docs/flex/developer/plugins/cli) page.
-
+## Plugin
+```
+Rename .env.example to .env and then add the function URL
+```

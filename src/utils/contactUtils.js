@@ -19,7 +19,7 @@ export const sendMessage = async (number, channel) => {
   }
 
   try {
-    await axios.post('https://outbound-conversations-6927-dev.twil.io/start-outbound-conversation/create-interaction', {
+    await axios.post(process.env.START_CONVERSATION_FUNCTION, {
             Token: token,
             workerSid: workerSid,
             customerAddress: formattedNumber,

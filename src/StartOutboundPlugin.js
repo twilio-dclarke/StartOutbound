@@ -21,6 +21,8 @@ export default class StartOutboundPlugin extends FlexPlugin {
    * @param flex { typeof import('@twilio/flex-ui') }
    */
   async init(flex, manager) {
+
+    console.log(process.env.START_CONVERSATION_FUNCTION)
     const sfdcBaseUrl = window.location.ancestorOrigins[0];
     if (!isSalesForce(sfdcBaseUrl)) {
       console.warn('Not initializing Salesforce since this instance has been launched independently.');
